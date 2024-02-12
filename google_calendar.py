@@ -285,3 +285,6 @@ class GoogleCalendar:
         except HttpError as error:
             logger.error(f"An error occurred: {error}")
             return False
+
+if __name__ == "__main__":
+    GoogleCalendar.remove_all_events_from_calendar()
