@@ -212,9 +212,9 @@ class GoogleCalendar:
                 service.events().insert(calendarId=calendar_id, body=event).execute()
             )
             return event
-        except HttpError as error:
+        except Exception as error:
             logger.error(f"An error occurred: {error}")
-            return None
+            raise error
 
     @staticmethod
     @logging
